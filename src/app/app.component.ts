@@ -14,6 +14,16 @@ export class AppComponent {
     new Recipe('Chicken Tikka Masala', ['chicken', 'paprika', 'butter', 'cumin', 'coriander', 'garam masala', 'tomatoes', 'rice', 'saffron'], ['Rub the spices on the chicken and cook in the oven', 'Mix the butter and tomatoes and add the chicken to the pot to cook more', 'Make the rice with saffron and add the chicken'])
   ];
 
+  selectedRecipe = null;
+
+  finishedEditing() {
+    this.selectedRecipe = null;
+  }
+
+  editRecipe(clickedRecipe) {
+    this.selectedRecipe = clickedRecipe;
+  }
+
 }
 
 export class Recipe {

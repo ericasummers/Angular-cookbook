@@ -13,5 +13,17 @@
       <li *ngFor="let currentDirection of currentRecipe.directions">{{currentDirection}}</li>
     </ul>
     <br><br>
+    <button (click)="editRecipe(currentRecipe)">Edit</button>
+    <div *ngIf="selectedRecipe">
+      <h3>Edit Recipe</h3>
+      <label for="title">Recipe Title:</label>
+      <input [(ngModel)]="selectedRecipe.title" type="text">
+      <label for="ingredients">Ingredients:</label>
+      <input [(ngModel)]="selectedRecipe.ingredients[0]" type="text">
+      <label for="directions">Recipe Directions:</label>
+      <input [(ngModel)]="selectedRecipe.directions" type="text">
+      <button (click)="finishedEditing()">Submit changes</button>
+    </div>
   </div>
 </div>
+<br>
