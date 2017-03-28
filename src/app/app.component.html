@@ -2,14 +2,16 @@
   {{title}}
 </h1>
 <h2>Recipes:</h2>
-<div *ngFor="let currentRecipe of recipes"><h3>{{currentRecipe.title}}</h3>
-  <h5>Ingredients:</h5>
-  <ul>
-    <li *ngFor="let currentIngredient of currentRecipe.ingredients">{{currentIngredient}}</li>
-  </ul>
-  <h5>Directions:</h5>
-  <ul>
-    <li *ngFor="let currentDirection of currentRecipe.directions">{{currentDirection}}</li>
-  </ul>
-<br><br>
+<div *ngFor="let currentRecipe of recipes"><h3 class="recipe-title" (click)="details.hidden =!details.hidden">{{currentRecipe.title}}</h3>
+  <div #details [hidden]="details">
+    <h5>Ingredients:</h5>
+    <ul>
+      <li *ngFor="let currentIngredient of currentRecipe.ingredients">{{currentIngredient}}</li>
+    </ul>
+    <h5>Directions:</h5>
+    <ul>
+      <li *ngFor="let currentDirection of currentRecipe.directions">{{currentDirection}}</li>
+    </ul>
+    <br><br>
+  </div>
 </div>
